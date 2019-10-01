@@ -1,0 +1,11 @@
+																	views
+/						: 메인 화면 									index.ejs
+	/board	 			: 게시판 목록(DB select)							board/list.ejs
+	/board/:num			: 게시판 글 보기(DB select)						board/view.ejs
+	/board/write		- get	>> 글쓰기 페이지로 이동					board/write.ejs
+						- post	>> 글쓰기(DB insert)
+	/board/:num/modify	- get	>> 글 수정페이지 이동(DB select)			board/modify.ejs
+						- post	>> 글 수정(DB update)
+	/board/:num/delete	:글 삭제(DB delete)
+
+**검색과 페이징을 하려면 더 복잡해진다.

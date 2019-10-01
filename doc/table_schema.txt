@@ -1,0 +1,40 @@
+create table board(
+	num int not null auto_increment,
+	name varchar(10) not null,
+	subject varchar(90) not null,
+	contents text not null,
+	hit int default 0,
+	regdate datetime default now(),
+
+	primary key (num)
+) default character set utf8 collate utf8_general_ci;
+
+create table fileinfo (
+	fid int not null auto_increment,
+	num int not null,
+	save_folder varchar(6), //년-월-일로 된 폴더에 그날에 올라온 게시글 폴더
+	original_name varchar(50),
+	save_name varchar(50),
+
+	primary key(fid),
+	foreign key(num) references board(num)
+) default character set utf8 collate utf8_general_ci;
+
+CREATE TABLE `board` (
+  `num` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(20) NOT NULL,
+  `subject` VARCHAR(90) NOT NULL,
+  `contents` TEXT NOT NULL,
+  `hit` INT NULL DEFAULT 0,
+  `regdate` DATETIME NULL DEFAULT 'now()',
+  PRIMARY KEY (`num`))
+ENGINE = InnoDB;
+
+select num, name, subject, contents, hit,
+		case 
+			when date_format(now(), '%Y%m%d') = date_format(regdate, '%Y%m%d')
+			then date_format(regdate, '%H:%i:%s')
+			else date_format(regdate, '%y.%m.%d')
+		end regdate
+from board
+order by num desc;

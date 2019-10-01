@@ -1,0 +1,28 @@
+<%- include('../includes/header.ejs') %>
+  <body>
+    <div class="container">
+    <h2 class="display-4">글작성</h2>
+      <form method="post" action="/board/write" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <div class="form-group">
+          <label for="subject">제목:</label>
+          <input type="text" class="form-control" id="subject" placeholder="제목 입력." name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="name">작성자:</label>
+          <input type="text" class="form-control" id="name" placeholder="이름 입력." name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="contents">내용:</label>
+          <textarea class="form-control" rows="10" id="contents" placeholder="내용 입력." name="contents"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="subject">사진첨부:</label>
+          <input type="file" name="picture" class="form-control-file border">
+          <input type="file" name="picture" class="form-control-file border">
+        </div>
+        <button type="submit" class="btn btn-primary">작성</button>
+        <button type="reset" class="btn btn-danger">초기화</button>
+      </form>
+    </div>
+  </body>
+</html>

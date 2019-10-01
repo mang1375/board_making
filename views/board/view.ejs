@@ -1,0 +1,70 @@
+<%- include('../includes/header') %>
+<script type="text/javascript">
+    function link() {
+        location.href = '/board';
+    }
+    function mod() {
+        location.href = '/modify/<%= article[0].num %>';
+    }
+    function del() {
+        location.href = '/board/<%= article[0].num %>/delete';
+    }
+</script>
+<body>
+    
+    <div class="container">
+        <br><br>
+    </div>
+    <div class="container">
+        <h2 class="display-4">글내용</h2>
+        <div class="table-responsive">
+            <table class="table">
+                <colgroup>
+                <col width="12%">
+                <col width="">
+                <col width="12%">
+                <col width="">
+                <col width="12%">
+                <col width="">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>제목</td>
+                    <td colspan="5"><strong><%=article[0].num%>. <%=article[0].subject%></strong></td>
+                </tr>
+                <tr>
+                    <td>작성자</td>
+                    <td><%=article[0].name%></td>
+                    <td>조회수</td>
+                    <td><%=article[0].hit%></td>
+                    <td>작성일</td>
+                    <td><%=article[0].regdate%></td>
+                </tr>
+                <tr>
+                    <td colspan="6" align="center">
+                    <%
+                    for(var i=0;i<article.length;i++) {
+                        if(article[i].savename) {
+                    %>
+                        <img src="/board/<%=article[i].savefolder%>/<%=article[i].savename%>">
+                    <%
+                        }
+                    }
+                    %>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6"><br/><%-article[0].contents.replace(/\n/g, '<br/>')%><br/></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="text-right">
+                <button type="button" class="btn btn-danger" onclick="del();">삭제</button>
+                <button type="button" class="btn" onclick="mod();">수정</button>
+                <button type="button" class="btn btn-primary" onclick="link();">목록</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

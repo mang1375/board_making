@@ -1,0 +1,20 @@
+board
+	- doc
+		- project_structure.txt : project 폰더(파일)구조
+		- table_schema.txt : mysql >> table info
+		- route.txt : route info
+	- node_modules
+	- public : static files
+		- style
+		- img
+		- js
+	- uploads : file upload
+	- views
+		- index.ejs
+		- board
+			- list.ejs
+			- modify.ejs
+			- write.ejs
+			- view.ejs
+	- app.js
+	

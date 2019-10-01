@@ -1,0 +1,29 @@
+<%- include('../includes/header.ejs') %>
+<body>
+    <div class="container">
+    <h2 class="display-4">글작성</h2>
+        <form action="/modify/<%= article.num %>" method="POST" class="needs-validation" novalidate>
+          <div class="form-group">
+            <label for="subject">제목</label>
+            <input type="text" class="form-control" id="subject" placeholder="제목 입력" name="subject" 
+            value="<%= article.subject %>" required>
+          </div>
+          <div class="form-group">
+            <label for="name">작성자</label>
+            <input type="text" class="form-control" id="name" placeholder="이름 입력" name="name"
+            value="<%= article.name %>" required>
+          </div>
+          <div class="form-group">
+            <label for="contents">내용</label>
+            <textarea class="form-control" rows="10" id="contents" placeholder="내용 입력" name="contents">
+              <%= article.contents %>
+            </textarea>
+          </div>
+          <div class="text-right">
+            <button type="reset" class="btn btn-danger">초기화</button>
+            <button type="submit" class="btn btn-primary">수정</button>
+          </div>
+        </form>
+    </div>
+</body>
+</html>

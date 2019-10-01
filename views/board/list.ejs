@@ -1,0 +1,68 @@
+<%- include('../includes/header.ejs') %>
+<style>
+    table {
+        margin-top: 10px;
+    }
+    th, td {
+        text-align: center;
+    }
+    td:nth-child(2) {
+        text-align: left;
+    }
+</style>
+<script type="text/javascript">
+    // window.onload = function() {
+    //     document.getElementById('write').onclick = function() {
+    //         location.href = '/write';
+    //     }
+    // }
+
+    function link() {
+        location.href = '/board/write';
+    }
+</script>
+
+<body>
+    <div class="container">
+        <br><br>
+    </div>
+    <div class="container">
+        <h2>게시판 목록</h2>
+        <div class="text-right">
+            <button type="button" class="btn btn-primary" onclick="link();">글쓰기</button>
+        </div>
+        <table class="table table-hover">
+            <colgroup>
+                <col width="12%">
+                <col width="">
+                <col width="12%">
+                <col width="10%">
+                <col width="12%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>글 번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% articles.forEach( function(index) { %>
+                    <tr>
+                        <td><%= index.num %></td>
+                        <td><a href='/board/<%= index.num %>'><%= index.subject %></a></td>
+                        <td><%= index.name %></td>
+                        <td><%= index.regdate %></td>
+                        <td><%= index.hit %></td>
+                    </tr>
+                <% });%>
+            </tbody>
+        </table>
+        <div class="text-right">
+            <button type="button" class="btn btn-primary" id='write' onclick="link();">글쓰기</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>노드 게시판</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+    	table {
+    		margin-top: 10px;
+    	}
+    	th, td {
+    		text-align: center;
+    	}
+    	td:nth-child(2) {
+    		text-align: left;
+    	}
+    </style>
+</head>
+
+<body>
+	<div class="container">
+        <br><br>
+    </div>
+    <div class="container">
+        <h2>게시판 목록</h2>
+        <div class="text-right">
+        	<button type="button" class="btn btn-primary">글쓰기</button>
+        </div>
+        <table class="table table-hover">
+        	<colgroup>
+        		<col width="12%">
+            	<col width="55%">
+                <col width="10%">
+                <col width="10%">
+                <col width="12%">
+        	</colgroup>
+            <thead>
+                <tr>
+                	<th>글 번호</th>
+                	<th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10</td>
+                    <td>안녕하세요</td>
+                    <td>dbwodus</td>
+                    <td>19.09.26</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>안녕하세요2</td>
+                    <td>dbwodus</td>
+                    <td>19.09.26</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>안녕하세요3</td>
+                    <td>dbwodus</td>
+                    <td>19.09.26</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-right">
+        	<button type="button" class="btn btn-primary">글쓰기</button>
+        </div>
+    </div>
+</body>
+
+</html>
